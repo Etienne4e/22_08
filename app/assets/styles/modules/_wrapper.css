@@ -1,0 +1,13 @@
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
+    max-width: 80rem;
+    overflow: hidden;
+
+    .wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

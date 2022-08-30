@@ -1,0 +1,41 @@
+body {
+    font-family: Museo-Sans, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: $mainColor;
+}
+
+strong {
+    font-weight: 700;
+}
+
+p {
+    margin: 1.2rem 0;
+}
+
+a {
+    color: $mainColor;
+}
+
+.headline {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $mainColor;
+
+    @mixin atSmall {
+        font-size: 1.8rem;
+    }
+
+    &--large {
+        margin: 1.5em 0;
+        font-size: 1.8rem;
+
+        @mixin atSmall {
+            font-size: 2.8rem;
+        }
+        @mixin atMedium {
+            font-size: 2.8rem;
+        }
+    }
+}
