@@ -1,25 +1,3 @@
 .section {
-    padding: .9rem 0;
-    
-    @mixin atMedium {
-        padding: .8rem 0;
-    }
-    
-    &__text-content {
-        text-align: center;
-    }
-    
-    &__description {
-        margin-bottom: 0.4em;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-    }
-
-    &__lists {
-        margin-top: 0.4em;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-    }
+    color: $primaryColour;
 }
