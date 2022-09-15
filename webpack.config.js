@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const fse = require('fs-extra')
-
 const postCSSPlugins = [
     require('postcss-import'),
     require('postcss-mixins'),
@@ -32,6 +31,7 @@ let pages = fse.readdirSync('./app').filter(function(file) {
     })
 })
 
+// configure css //
 let cssConfig = {
     test: /\.css$/i,
     use: [
@@ -47,6 +47,7 @@ let cssConfig = {
     ]
 }
 
+// configure all scripts //
 let config = {
     entry: './app/assets/scripts/App.js',
     plugins: pages,
@@ -57,6 +58,8 @@ let config = {
     }
 }
 
+
+// configure development scripts //
 if (currentTask == 'dev') {
     cssConfig.use.unshift('style-loader')
     config.output = {
@@ -75,6 +78,7 @@ if (currentTask == 'dev') {
     config.mode = 'development'
 }
 
+// configure build scripts //
 if (currentTask == 'build') {
     config.module.rules.push({
         test: /\.js$/,
@@ -93,6 +97,7 @@ if (currentTask == 'build') {
         chunkFilename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'docs')
     }
+
     config.mode = 'production',
     config.optimization = {
         splitChunks: {
